@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ContentOS case study by Aditya Raj." />
+  <meta name="theme-color" content="#eeece4" /><meta property="og:type" content="article" /><meta property="og:title" content="ContentOS — Aditya Raj" /><meta property="og:description" content="An internal multi-stage AI pipeline turning raw footage into production-ready ideas." /><meta property="og:image" content="/assets/projects/contentos.webp" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/src/case-study.css" />
+  <title>ContentOS — Aditya Raj</title>
+</head>
+<body>
+  <nav class="case-nav" aria-label="Case study navigation"><a href="/">← All work</a><a class="case-nav__brand" href="/">Aditya Raj</a><a class="case-nav__next" href="/work/naksha-studio/">Next project →</a></nav>
+  <header class="case-hero"><div class="case-hero__eyebrow"><span>ContentOS / 2026</span><span class="draft-note">Draft narrative</span></div><h1>From raw footage<br />to an idea <em>worth filming.</em></h1><div class="case-hero__bottom"><p class="case-hero__intro">An internal production system that turns unstructured creator footage into ranked, ready-to-shoot Hinglish Instagram scripts.</p><dl class="case-meta"><div><dt>Role</dt><dd>Design Engineer</dd></div><div><dt>Status</dt><dd>In production</dd></div><div><dt>Stack</dt><dd>Next.js / Supabase</dd></div><div><dt>AI</dt><dd>Gemini / LLM pipeline</dd></div></dl></div></header>
+  <div class="case-cover case-cover--image"><img src="/assets/projects/contentos.webp" alt="Three textile panels progressing from fragmented to structured compositions" /></div>
+  <section class="case-section"><div class="case-grid"><p class="chapter-label">01 / System</p><div class="case-copy"><h2>Creative work still needs<br /><em>operational structure.</em></h2><p>Content analysis was not a single prompt. It required intake, source scraping, evaluation, ranking, script generation, and human review. I structured the product around these phases so the system could be inspected and improved rather than treated as one opaque AI response.</p><div class="fact-grid"><div class="fact"><strong>Multi-stage</strong><span>Pipeline with LLM calls at each phase</span></div><div class="fact"><strong>$1.50</strong><span>Approximate cost per analysis</span></div><div class="fact"><strong>0→1</strong><span>Architecture, interface, and implementation</span></div></div></div></div></section>
+  <section class="case-section case-section--dark"><div class="case-grid"><p class="chapter-label">02 / Decisions</p><div class="case-copy"><h2>Show the reasoning<br />without showing <em>the machinery.</em></h2><p>The interface needed to help an internal team understand why content was ranked a certain way, find weak stages, and move from analysis to an actionable script without exposing unnecessary technical detail.</p><div class="decision-grid"><article class="decision"><span>Decision 01</span><h3>Phase boundaries</h3><p>Give each stage a clear input, output, and visible status to make failures diagnosable.</p></article><article class="decision"><span>Decision 02</span><h3>Rank before write</h3><p>Separate content judgment from generation so the team could evaluate signals first.</p></article><article class="decision"><span>Decision 03</span><h3>Cost as product data</h3><p>Treat model usage and analysis cost as a first-class operational constraint.</p></article></div></div></div></section>
+  <section class="case-section"><div class="case-grid"><p class="chapter-label">03 / Reflection</p><div class="case-copy"><h2>Design and code became<br /><em>one feedback loop.</em></h2><p>Owning the product and implementation meant interface decisions could respond directly to real pipeline behavior. This draft will later include the production interface, failure states, ranking model, and examples of how generated scripts changed through iteration.</p></div></div></section>
+  <section class="case-next"><p>Next case study</p><a href="/work/naksha-studio/">Naksha Studio<br /><em>A team inside the terminal.</em></a></section>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
