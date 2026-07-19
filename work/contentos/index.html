@@ -15,6 +15,24 @@
   <section class="case-section"><div class="case-grid"><p class="chapter-label">01 / System</p><div class="case-copy"><h2>Creative work still needs<br /><em>operational structure.</em></h2><p>Content analysis was not a single prompt. It required intake, source scraping, evaluation, ranking, script generation, and human review. I structured the product around these phases so the system could be inspected and improved rather than treated as one opaque AI response.</p><div class="fact-grid"><div class="fact"><strong>Multi-stage</strong><span>Pipeline with LLM calls at each phase</span></div><div class="fact"><strong>$1.50</strong><span>Approximate cost per analysis</span></div><div class="fact"><strong>0→1</strong><span>Architecture, interface, and implementation</span></div></div></div></div></section>
   <section class="case-section case-section--dark"><div class="case-grid"><p class="chapter-label">02 / Decisions</p><div class="case-copy"><h2>Show the reasoning<br />without showing <em>the machinery.</em></h2><p>The interface needed to help an internal team understand why content was ranked a certain way, find weak stages, and move from analysis to an actionable script without exposing unnecessary technical detail.</p><div class="decision-grid"><article class="decision"><span>Decision 01</span><h3>Phase boundaries</h3><p>Give each stage a clear input, output, and visible status to make failures diagnosable.</p></article><article class="decision"><span>Decision 02</span><h3>Rank before write</h3><p>Separate content judgment from generation so the team could evaluate signals first.</p></article><article class="decision"><span>Decision 03</span><h3>Cost as product data</h3><p>Treat model usage and analysis cost as a first-class operational constraint.</p></article></div></div></div></section>
   <section class="case-section"><div class="case-grid"><p class="chapter-label">03 / Reflection</p><div class="case-copy"><h2>Design and code became<br /><em>one feedback loop.</em></h2><p>Owning the product and implementation meant interface decisions could respond directly to real pipeline behavior. This draft will later include the production interface, failure states, ranking model, and examples of how generated scripts changed through iteration.</p></div></div></section>
+  <section class="case-section case-section--evidence"><div class="case-grid"><p class="chapter-label">04 / Implementation evidence</p><div class="case-copy"><h2>React and TypeScript,<br /><em>visible in public code.</em></h2><p>ContentOS is private, so this related Fobet frontend implementation is used as public engineering evidence rather than presented as ContentOS source. It shows the same design-engineering approach: typed component contracts, explicit media states, browser failure handling, and performance-aware loading.</p><div class="code-evidence"><div class="code-evidence__bar"><span>ReelPlayer.tsx</span><a href="https://github.com/Adityaraj0421/fobetmedia/blob/main/src/components/ReelPlayer.tsx" target="_blank" rel="noreferrer">View source ↗</a></div><pre><code>interface ReelProps {
+  data: {
+    id: number;
+    username: string;
+    videoSrc: string;
+  };
+  isActive: boolean;
+}
+
+useEffect(() =&gt; {
+  if (isActive &amp;&amp; videoRef.current) {
+    videoRef.current.play()
+      .then(() =&gt; setIsPlaying(true))
+      .catch(() =&gt; setIsPlaying(false));
+  } else {
+    videoRef.current?.pause();
+  }
+}, [isActive]);</code></pre></div><div class="engineering-grid"><article><span>Component contract</span><h3>Typed props</h3><p>The media component defines its input and active state in TypeScript rather than accepting unstructured data.</p></article><article><span>Async state</span><h3>Failure-aware playback</h3><p>The interface handles both resolved and rejected browser playback promises instead of assuming autoplay succeeds.</p></article><article><span>Performance</span><h3>Load only what is active</h3><p>Active media uses eager preload; inactive media is paused and configured not to preload.</p></article><article><span>State architecture</span><h3>Local + shared state</h3><p>Ephemeral playback stays local while shared modal, toast, and selection state lives in a typed Zustand store.</p></article></div><p class="evidence-note">Public evidence currently does not include an automated test suite or production API-contract layer, so those are intentionally not claimed here.</p></div></div></section>
   <section class="case-next"><p>Next case study</p><a href="/work/naksha-studio/">Naksha Studio<br /><em>A team inside the terminal.</em></a></section>
   <script type="module" src="/src/main.js"></script>
 </body>

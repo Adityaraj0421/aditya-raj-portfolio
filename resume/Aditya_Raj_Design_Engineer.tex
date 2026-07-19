@@ -1,0 +1,131 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=0.7in,top=0.4in,right=0.7in,bottom=0.4in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{needspace}
+
+% Define colors
+\definecolor{primary}{RGB}{0, 0, 0}
+\definecolor{secondary}{RGB}{80, 80, 80}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+\begin{document}
+\pagestyle{empty}
+
+%-------------------------
+% HEADER
+%-------------------------
+\begin{center}
+    {\Huge \textbf{Aditya Raj}} \\ \vspace{4pt}
+    {\color{secondary} Design Engineer --- Product design to shipped React/TypeScript code} \\ \vspace{4pt}
+    \small
+    \faPhone\ +91 74628 98979 \quad
+    \faEnvelope\ \href{mailto:kang.applies@gmail.com}{kang.applies@gmail.com} \quad
+    \faLinkedin\ \href{https://linkedin.com/in/aditya-raj-186509143}{LinkedIn} \quad
+    \faGithub\ \href{https://github.com/Adityaraj0421}{GitHub} \quad
+    \faGlobe\ \href{https://aditya-raj-portfolio-liart.vercel.app/}{Portfolio}
+\end{center}
+
+%-------------------------
+% EDUCATION
+%-------------------------
+\section{Education}
+\noindent
+\textbf{Indian Institute of Information Technology (IIIT), Guwahati} \hfill Guwahati, India \\
+\textit{Bachelor of Technology in Electronics and Communication Engineering} \hfill 2022 -- 2026
+
+%-------------------------
+% EXPERIENCE
+%-------------------------
+\section{Experience}
+
+\needspace{8\baselineskip}
+\noindent
+\textbf{Fobet Media} \hfill Apr 2026 -- Present \\
+\textit{Design Engineer} \hfill On-site
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Own ContentOS end to end: an internal AI pipeline turning raw creator footage into ready-to-shoot Hinglish Instagram scripts. Architected the multi-phase pipeline myself (intake, scraping, ranking, script generation) with LLM calls at each stage, running in production at \textasciitilde{}\$1.50 per analysis.
+    \item Designed and built the production interface on a Next.js / TypeScript / Supabase / Gemini stack, structuring the UI around inspectable pipeline stages and asynchronous outputs so product decisions and implementation stayed in one feedback loop.
+\end{itemize}
+\vspace{4pt}
+
+\needspace{8\baselineskip}
+\noindent
+\textbf{Find My Genie} \hfill Jan 2026 -- Mar 2026 \\
+\textit{Founding Design Engineer} \hfill Remote
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Designed and coded four production React/Next.js portals solo---customer, vendor, admin HITL, and verification---for an AI concierge coordinating outreach across 20+ vendors, with no design-to-dev handoff.
+    \item Designed traceable agent states and human-control paths for intervention, override, verification, and recovery; made uncertainty visible across customer and operator surfaces while reducing the booking flow to 4 steps, \textasciitilde{}35\% faster.
+\end{itemize}
+\vspace{4pt}
+
+\needspace{7\baselineskip}
+\noindent
+\textbf{Jobmato} \hfill Oct 2024 -- Aug 2025 \\
+\textit{Product Designer} \hfill Hybrid
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Designed the Android application UI from scratch across 20+ screens, establishing a component library that cut design-to-dev handoff time by \textasciitilde{}40\%.
+    \item Defined full visual identity, logo, typography, color system, and brand guidelines, adopted consistently across product, marketing, and social channels.
+\end{itemize}
+\vspace{4pt}
+
+\needspace{7\baselineskip}
+\noindent
+\textbf{Stealth Startup} \hfill Apr 2024 -- Aug 2024 \\
+\textit{Product Designer} \hfill Remote
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Took a student-facing offline events platform from zero to final UI in 10 weeks, designing all user flows, onboarding, and event discovery end-to-end.
+    \item Built a reusable design system of 30+ components, enabling the founding team to iterate on new features without design bottlenecks.
+\end{itemize}
+
+%-------------------------
+% PROJECTS
+%-------------------------
+\section{Key Projects}
+
+\needspace{6\baselineskip}
+\noindent
+\textbf{Claussal.ai (Legal AI Agent)} \hfill \textit{Dec 2025 -- Mar 2026}
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Led product design for a litigation and compliance AI platform for the Indian legal market, integrating LLM outputs into 8 dashboard views covering case tracking, document analysis, and compliance workflows.
+    \item Solved high-density data display challenges by creating a structured layout system that surfaces critical case signals without overwhelming legal professionals.
+\end{itemize}
+\vspace{4pt}
+
+\needspace{6\baselineskip}
+\noindent
+\textbf{Naksha Studio (Open-Source)} \hfill \textit{github.com/Adityaraj0421}
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item Built and shipped solo: a 26-role virtual design team for Claude Code, Cursor, Windsurf, Gemini CLI, and Copilot, with 62 commands and 15,000+ lines of expert design knowledge.
+    \item 300+ GitHub stars, 22 forks; real, unpaid adoption across the AI developer tools ecosystem.
+\end{itemize}
+\vspace{4pt}
+
+%-------------------------
+% CERTIFICATIONS
+%-------------------------
+\needspace{3\baselineskip}
+\section{Certifications}
+\noindent 10k Designers, Product Design Cohort \quad\textperiodcentered\quad Google UX Design Professional Certificate, Coursera
+
+%-------------------------
+% SKILLS
+%-------------------------
+\needspace{9\baselineskip}
+\section{Technical Skills}
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=1.5em]
+    \item \textbf{Design:} Product Design, UI/UX, Interaction Design, Design Systems, Accessibility, Usability Testing
+    \item \textbf{Tools:} Figma, Adobe Creative Suite, Protopie
+    \item \textbf{Development:} React, Next.js, TypeScript, JavaScript, Zustand, HTML, CSS, Python (FastAPI)
+    \item \textbf{Engineering:} Typed Component Architecture, Async UI States, API Integration, Responsive Performance
+    \item \textbf{AI:} LLM/API integration (ContentOS, Petrosa, Claussal.ai), LangGraph
+    \item \textbf{Strengths:} Design Leadership, Strategic Thinking, Cross-functional Collaboration
+\end{itemize}
+
+\end{document}
