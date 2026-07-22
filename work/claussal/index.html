@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Claussal case study by Aditya Raj — an inspectable AI workspace for contract review." />
+  <meta name="theme-color" content="#eeece4" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Claussal — Aditya Raj" />
+  <meta property="og:description" content="Keeping the document primary while making AI contract analysis traceable and reversible." />
+  <meta property="og:image" content="/assets/case-studies/claussal/redline-suggestions-composite.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/src/case-study.css" />
+  <title>Claussal — Aditya Raj</title>
+</head>
+<body>
+  <nav class="case-nav" aria-label="Case study navigation"><a href="/">← All work</a><a class="case-nav__brand" href="/">Aditya Raj</a><a class="case-nav__next" href="#implementation">View build ↓</a></nav>
+
+  <main>
+
+  <header class="case-hero case-hero--claussal">
+    <div class="case-hero__eyebrow"><span>Claussal.ai / Contract intelligence</span><span>Product design × engineering</span></div>
+    <h1>The answer matters.<br />The clause behind it <em>matters more.</em></h1>
+    <div class="case-hero__bottom">
+      <p class="case-hero__intro">I designed and built an AI contract-review workspace that keeps recommendations tied to the source—and every proposed change inspectable and reversible.</p>
+      <dl class="case-meta"><div><dt>Role</dt><dd>Product Designer + Engineer</dd></div><div><dt>Product</dt><dd>Contract intelligence MVP</dd></div><div><dt>Stack</dt><dd>React / TypeScript / FastAPI</dd></div><div><dt>Scope</dt><dd>UX, frontend, API integration</dd></div></dl>
+    </div>
+  </header>
+
+  <div class="case-cover case-cover--image"><img src="/assets/projects/claussal.webp" alt="An architectural archive organizing dense paper records into clear planes" /></div>
+
+  <section class="case-section">
+    <div class="case-grid"><p class="chapter-label">01 / Trust model</p><div class="case-copy"><h2>Do not replace the document with <em>a confident chat box.</em></h2><p>Contract review is not a summarization problem. A useful recommendation must remain connected to the original language, its location, the proposed replacement, and the consequence of accepting it. Claussal treats the agreement—not the assistant—as the primary object.</p><div class="fact-grid"><div class="fact"><strong>Source</strong><span>The original clause stays in view</span></div><div class="fact"><strong>Change</strong><span>Original and proposed language are compared</span></div><div class="fact"><strong>Reason</strong><span>Recommendations retain their context</span></div></div></div></div>
+  </section>
+
+  <section class="case-section case-section--claussal-green">
+    <div class="case-grid"><p class="chapter-label">02 / Review workspace</p><div class="case-copy"><h2>One workspace for reading, locating, and <em>deciding.</em></h2><p>The layout holds three levels of attention at once: the agreement outline, the document itself, and the active risk or suggestion. Reviewers can move between clauses without losing their place or accepting an AI recommendation blindly.</p><div class="decision-grid"><article class="decision"><span>Decision 01</span><h3>Document first</h3><p>The central reading plane gets the largest share of the interface.</p></article><article class="decision"><span>Decision 02</span><h3>Linked evidence</h3><p>Risks and suggestions point back to identifiable clauses.</p></article><article class="decision"><span>Decision 03</span><h3>Reversible action</h3><p>Changes can be staged, accepted, rejected, or undone.</p></article></div></div></div>
+    <div class="claussal-gallery">
+      <figure class="product-shot"><img loading="lazy" src="/assets/case-studies/claussal/redline-suggestions-composite.webp" alt="Claussal redline suggestions interface set inside a physical clause archive" /><figcaption><span>CLA / Figure 01</span> Redline archive — inspect source and proposed language in context</figcaption></figure>
+      <figure class="product-shot"><img loading="lazy" src="/assets/case-studies/claussal/clause-qa-composite.webp" alt="Claussal contextual question and answer interface surrounded by agreement clauses" /><figcaption><span>CLA / Figure 02</span> Clause archive — ask with the agreement still visible</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="case-section case-section--dark">
+    <div class="case-grid"><p class="chapter-label">03 / Long-running AI</p><div class="case-copy"><h2>Analysis takes time.<br />The interface should explain <em>what time means.</em></h2><p>Uploading and analysing a long contract involves multiple systems and can fail at multiple points. The experience separates upload progress from analysis stages, persists the document identifier, restores interrupted sessions, and returns users to a recoverable state when the pipeline fails.</p><div class="engineering-grid engineering-grid--dark"><article><span>Stage 01</span><h3>Upload</h3><p>File validation, visible progress, and Drive import.</p></article><article><span>Stage 02</span><h3>Analyse</h3><p>Scanning, clauses, risks, redlines, and finalization.</p></article><article><span>Stage 03</span><h3>Restore</h3><p>Persist the document ID and resume polling after interruption.</p></article><article><span>Stage 04</span><h3>Recover</h3><p>Explicit error state, reset path, and safe retry.</p></article></div></div></div>
+    <figure class="upload-stage"><img loading="lazy" src="/assets/case-studies/claussal/contract-upload-composite.webp" alt="Claussal contract upload interface embedded at the entrance to a clause archive" /><figcaption><span>CLA / Figure 03</span> Contract intake — upload, analyse, understand</figcaption></figure>
+  </section>
+
+  <section class="case-section case-section--evidence" id="implementation">
+    <div class="case-grid"><p class="chapter-label">04 / Implementation</p><div class="case-copy"><h2>The interface carries the state of <em>the actual pipeline.</em></h2><p>The React context coordinates upload progress, analysis stages, document restoration, selected clauses, redline decisions, and assistant messages. It connects to a FastAPI upload service and polls for completed analysis rather than simulating an instant AI response.</p><div class="code-evidence"><div class="code-evidence__bar"><span>AppContext.tsx</span><span>React / TypeScript</span></div><pre><code>const uploadDocument = async (file: File) =&gt; {
+  setIsUploading(true)
+  setAnalysisStep('scanning')
+
+  const response = await apiClient.post(
+    '/api/v1/upload/pdf', formData,
+    { onUploadProgress: updateProgress }
+  )
+
+  const pdfId = response.data.pdf_id
+  setAnalysisStep('clauses')
+
+  const result = await clausiaService
+    .pollForAnalysis(pdfId, setAnalysisStep)
+
+  setAnalysisResult(result)
+}</code></pre></div><div class="engineering-grid"><article><span>State model</span><h3>Explicit phases</h3><p>The UI renders named analysis stages instead of a generic spinner.</p></article><article><span>Persistence</span><h3>Session restoration</h3><p>A stored document ID lets the client recover work after reload.</p></article><article><span>API boundary</span><h3>Upload and polling</h3><p>The frontend reflects real request progress and delayed processing.</p></article><article><span>Review actions</span><h3>Typed redline states</h3><p>Pending, staged, accepted, and rejected decisions are represented explicitly.</p></article></div></div></div>
+  </section>
+
+  <section class="case-section"><div class="case-grid"><p class="chapter-label">05 / Current state</p><div class="case-copy"><h2>A working vertical slice—not a claim of <em>legal certainty.</em></h2><p>The MVP proves the interaction model and the connection between document upload, asynchronous analysis, clause navigation, risk review, redlines, and contextual Q&amp;A. Before broader deployment, I would validate citation accuracy, reviewer agreement, false-positive risk rates, export fidelity, keyboard navigation, and recovery under real processing failures.</p><p class="case-reflection"><strong>Important boundary:</strong> Claussal supports review; it does not replace legal judgment. The product should communicate model uncertainty and preserve a clear human approval step before changes leave the workspace.</p></div></div></section>
+
+  <section class="case-next"><p>Next case study</p><a href="/work/contentos/">ContentOS<br /><em>From footage to ideas.</em></a></section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
