@@ -646,6 +646,27 @@ h1 em {
   transform: rotate(-4deg);
 }
 
+.project--itz {
+  overflow: hidden;
+  border-radius: clamp(22px, 3vw, 44px);
+  background: #100d0d;
+}
+
+.project--itz .project__visual {
+  border-radius: 0;
+  background: #171313;
+}
+
+.project--itz .project__details--dark {
+  background: linear-gradient(135deg, #120f0f, #211313);
+}
+
+.project--itz .project__details--dark .project__index,
+.project--itz .project__details--dark .project__summary > p:first-child,
+.project--itz .project__details--dark .project__metrics span {
+  color: #a89b94;
+}
+
 .content-sun {
   position: absolute;
   top: 11%;
