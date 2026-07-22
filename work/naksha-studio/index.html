@@ -3,19 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Naksha Studio case study by Aditya Raj." />
-  <meta name="theme-color" content="#eeece4" /><meta property="og:type" content="article" /><meta property="og:title" content="Naksha Studio — Aditya Raj" /><meta property="og:description" content="An open-source design team built for AI coding tools." /><meta property="og:image" content="/assets/projects/naksha-studio.webp" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Naksha Studio case study by Aditya Raj — turning design practice into an open-source plugin system for AI coding tools." />
+  <meta name="theme-color" content="#eeece4" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Naksha Studio — Aditya Raj" />
+  <meta property="og:description" content="How I encoded design judgment into 26 specialist roles, 63 commands, progressive context, hooks, and executable quality gates." />
+  <meta property="og:image" content="/assets/projects/naksha-studio.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/src/case-study.css" />
   <title>Naksha Studio — Aditya Raj</title>
 </head>
 <body>
-  <nav class="case-nav" aria-label="Case study navigation"><a href="/">← All work</a><a class="case-nav__brand" href="/">Aditya Raj</a><a class="case-nav__next" href="mailto:kang.applies@gmail.com">Let’s talk ↗</a></nav>
-  <header class="case-hero"><div class="case-hero__eyebrow"><span>Naksha Studio / Open source</span><span class="draft-note">Draft narrative</span></div><h1>A design team<br />inside your <em>terminal.</em></h1><div class="case-hero__bottom"><p class="case-hero__intro">An open-source system that brings 26 design specialists, 62+ commands, and 15,000+ lines of expert knowledge into AI coding tools.</p><dl class="case-meta"><div><dt>Role</dt><dd>Creator / maintainer</dd></div><div><dt>Scope</dt><dd>Product + system</dd></div><div><dt>License</dt><dd>MIT</dd></div><div><dt>Adoption</dt><dd>300+ stars / 22 forks</dd></div></dl></div></header>
-  <div class="case-cover case-cover--image"><img src="/assets/projects/naksha-studio.webp" alt="A monumental dark doorway containing an illuminated network of specialist forms" /></div>
-  <section class="case-section"><div class="case-grid"><p class="chapter-label">01 / Idea</p><div class="case-copy"><h2>AI could write code.<br />It still needed <em>design judgment.</em></h2><p>Naksha began as an attempt to encode the parts of design practice that generic coding agents routinely miss: hierarchy, interaction states, accessibility, brand consistency, motion, and the reasoning that connects them.</p><div class="fact-grid"><div class="fact"><strong>26</strong><span>Specialist design roles</span></div><div class="fact"><strong>62+</strong><span>Repeatable design commands</span></div><div class="fact"><strong>15k+</strong><span>Lines of expert knowledge</span></div></div></div></div></section>
-  <section class="case-section case-section--dark"><div class="case-grid"><p class="chapter-label">02 / Architecture</p><div class="case-copy"><h2>Not one giant prompt.<br />A system of <em>specialists.</em></h2><p>A design manager routes work to the relevant roles and loads only the knowledge required by the task. The same underlying design practice is packaged for different tools instead of forcing every environment into one installation model.</p><div class="decision-grid"><article class="decision"><span>Principle 01</span><h3>Progressive context</h3><p>Load specialist knowledge only when the current task needs it.</p></article><article class="decision"><span>Principle 02</span><h3>Tool-native packaging</h3><p>Respect the conventions of Claude Code, Cursor, Windsurf, Gemini CLI, and Copilot.</p></article><article class="decision"><span>Principle 03</span><h3>Quality as behavior</h3><p>Build accessibility and design review into workflows rather than leaving them as advice.</p></article></div></div></div></section>
-  <section class="case-section"><div class="case-grid"><p class="chapter-label">03 / Adoption</p><div class="case-copy"><h2>Built solo.<br />Adopted by <em>people I didn’t know.</em></h2><p>The strongest validation came from unpaid organic adoption across the AI developer-tools ecosystem. The project has continued to evolve through hundreds of commits, new tool support, and increasingly structured evaluation.</p><div class="fact-grid"><div class="fact"><strong>300+</strong><span>GitHub stars</span></div><div class="fact"><strong>22</strong><span>Repository forks</span></div><div class="fact"><strong>298</strong><span>Public commits at research time</span></div></div><p><a href="https://github.com/Adityaraj0421/naksha-studio" target="_blank" rel="noreferrer"><strong>Explore the repository ↗</strong></a></p></div></div></section>
-  <section class="case-next"><p>End of selected work</p><a href="mailto:kang.applies@gmail.com">Build the next<br /><em>good thing together.</em></a></section>
+  <nav class="case-nav" aria-label="Case study navigation">
+    <a href="/">← All work</a>
+    <a class="case-nav__brand" href="/">Aditya Raj</a>
+    <a class="case-nav__next" href="https://github.com/Adityaraj0421/naksha-studio" target="_blank" rel="noreferrer">View repository ↗</a>
+  </nav>
+
+  <main>
+    <header class="case-hero case-hero--naksha">
+      <div class="case-hero__eyebrow"><span>Naksha Studio / Open source</span><span>Plugin architecture × design systems</span></div>
+      <h1>A design team<br />inside your <em>terminal.</em></h1>
+      <div class="case-hero__bottom">
+        <p class="case-hero__intro">I turned design practice into an open-source system that gives AI coding tools specialist judgment, task-aware context, and repeatable quality checks—not another giant prompt.</p>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Creator and maintainer</dd></div>
+          <div><dt>Current release</dt><dd>v5.1.1</dd></div>
+          <div><dt>License</dt><dd>MIT</dd></div>
+          <div><dt>Adoption</dt><dd>301 stars / 23 forks</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="case-cover case-cover--image"><img src="/assets/projects/naksha-studio.webp" alt="A monumental dark doorway containing an illuminated network of specialist forms" /></div>
+
+    <section class="case-section">
+      <div class="case-grid">
+        <p class="chapter-label">01 / The problem</p>
+        <div class="case-copy">
+          <h2>AI could generate an interface.<br />It still lacked <em>design judgment.</em></h2>
+          <p>Coding agents were becoming capable of producing entire frontends, but their design decisions were still shallow and inconsistent. A single prompt could ask for polish; it could not reliably carry interaction states, hierarchy, accessibility, content, motion, design-system logic, or the reasoning that connects them.</p>
+          <p>Naksha began with a systems question: what would it take to make design knowledge callable, scoped, and testable inside the tools where software is already being built?</p>
+          <div class="fact-grid">
+            <div class="fact"><strong>26</strong><span>Specialist design roles</span></div>
+            <div class="fact"><strong>63</strong><span>Task-specific commands</span></div>
+            <div class="fact"><strong>15,261</strong><span>Lines of design knowledge</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--ink">
+      <div class="case-grid">
+        <p class="chapter-label">02 / System model</p>
+        <div class="case-copy">
+          <h2>Not one giant prompt.<br />A manager that assembles <em>the right team.</em></h2>
+          <p>The core design skill behaves like a routing layer. It interprets the task, selects the relevant specialists, and loads only the references required to complete the work. A landing page may need UI, content, motion, and design-system knowledge; a compliance audit should activate a different path.</p>
+        </div>
+      </div>
+
+      <div class="naksha-architecture" aria-label="Naksha request routing architecture">
+        <article><span>01 / Intent</span><strong>“Design an analytics dashboard”</strong><small>The request arrives in the coding environment.</small></article>
+        <i aria-hidden="true">→</i>
+        <article class="naksha-architecture__core"><span>02 / Orchestrator</span><strong>Design Manager</strong><small>Scopes the task and assembles the team.</small></article>
+        <i aria-hidden="true">→</i>
+        <article><span>03 / Context</span><strong>Dashboard + data-viz + UI</strong><small>Only relevant specialist references are loaded.</small></article>
+        <i aria-hidden="true">→</i>
+        <article><span>04 / Output</span><strong>Working artifact + QA</strong><small>The result includes behavior, semantics, and checks.</small></article>
+      </div>
+
+      <div class="case-grid case-grid--followup">
+        <p class="chapter-label">Progressive context</p>
+        <div class="case-copy">
+          <div class="decision-grid decision-grid--dark">
+            <article class="decision"><span>Principle 01</span><h3>Route before loading</h3><p>Determine the task shape before bringing specialist knowledge into context.</p></article>
+            <article class="decision"><span>Principle 02</span><h3>Specialists, not personas</h3><p>Each role contributes concrete rules, patterns, failure modes, and output expectations.</p></article>
+            <article class="decision"><span>Principle 03</span><h3>Artifacts over advice</h3><p>Commands are designed to produce usable code, audits, systems, and documentation.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--sage">
+      <div class="case-grid">
+        <p class="chapter-label">03 / Distribution</p>
+        <div class="case-copy">
+          <h2>One knowledge core.<br /><em>Six tool-native adapters.</em></h2>
+          <p>The plugin could not assume every agent platform worked like Claude Code. I kept the design practice consistent while packaging it through each environment’s native convention: a full plugin and hooks where supported, persistent rule files elsewhere.</p>
+          <div class="naksha-platforms">
+            <article><span>Full plugin</span><h3>Claude Code</h3><p>Commands, agents, hooks, skills, and a live symlink for updates.</p></article>
+            <article><span>Project rule</span><h3>Cursor</h3><p>A native <code>.cursor/rules/naksha.mdc</code> integration.</p></article>
+            <article><span>Project rule</span><h3>Windsurf</h3><p>Design behavior packaged through <code>.windsurfrules</code>.</p></article>
+            <article><span>Context file</span><h3>Gemini CLI</h3><p>Persistent project guidance through <code>GEMINI.md</code>.</p></article>
+            <article><span>Instructions</span><h3>Copilot</h3><p>Repository-level behavior through Copilot instructions.</p></article>
+            <article><span>Agent + skill</span><h3>Autohand</h3><p><code>AGENTS.md</code> plus a project-scoped design skill.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--evidence">
+      <div class="case-grid">
+        <p class="chapter-label">04 / Quality infrastructure</p>
+        <div class="case-copy">
+          <h2>Knowledge files were not enough.<br />The system needed <em>ways to fail.</em></h2>
+          <p>As the command surface grew, copy-pasted counts, broken metadata, weak fixtures, and regression-prone behavior became product risks. I added executable checks around the plugin rather than relying on documentation to remain correct by hand.</p>
+          <div class="code-evidence">
+            <div class="code-evidence__bar"><span>scripts/quality-check.sh</span><span>Five fail-at-end gates</span></div>
+            <pre><code>verify-metadata.sh        # manifest and stats agree
+behavioral-smoke.sh       # fixtures satisfy command assertions
+design-lint.js            # structural design rules
+guard-legacy-branding.sh  # removed identity cannot return
+guard-counts.sh           # README and filesystem cannot drift</code></pre>
+          </div>
+          <div class="engineering-grid">
+            <article><span>Evaluation</span><h3>169 cases</h3><p>Prompts and assertions cover expected behavior across the design command surface.</p></article>
+            <article><span>SessionStart hook</span><h3>Detect context</h3><p>Framework, tokens, dependencies, and project conventions are discovered before work begins.</p></article>
+            <article><span>PreToolUse hook</span><h3>Guard semantics</h3><p>HTML writes are checked for language, landmarks, alt text, and genuine interactive elements.</p></article>
+            <article><span>Stop hook</span><h3>Persist memory</h3><p>Constraints and discovered patterns flow back into project memory for later sessions.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section case-section--dark">
+      <div class="case-grid">
+        <p class="chapter-label">05 / Open-source evolution</p>
+        <div class="case-copy">
+          <h2>The architecture grew through use—not <em>a launch-day feature list.</em></h2>
+          <p>Naksha moved from a role library into a maintained developer tool: cross-platform packaging, structured commands, project memory, browser research, health checks, evaluation infrastructure, and a reel pipeline all arrived through successive releases.</p>
+          <div class="naksha-release-line" aria-label="Selected Naksha release milestones">
+            <article><span>Mar 2026</span><h3>v3.3</h3><p>Naksha identity and expanded specialist model.</p></article>
+            <article><span>Mar 2026</span><h3>v4.0</h3><p>Project memory, pipelines, vision, and frontier roles.</p></article>
+            <article><span>May 2026</span><h3>v5.0</h3><p>Persistent design agent and browser-grounded project context.</p></article>
+            <article><span>Jun 2026</span><h3>v5.1.1</h3><p>Design Reel workflow and an end-to-end wipe correction.</p></article>
+          </div>
+          <div class="fact-grid fact-grid--dark">
+            <div class="fact"><strong>301</strong><span>GitHub stars</span></div>
+            <div class="fact"><strong>23</strong><span>Repository forks</span></div>
+            <div class="fact"><strong>34</strong><span>Published releases</span></div>
+          </div>
+          <p class="case-reflection case-reflection--dark"><strong>What I learned:</strong> encoding expertise is partly a content-design problem and partly a systems-design problem. The useful unit is not “more prompt.” It is a bounded capability with an activation rule, the minimum context it needs, a concrete output contract, and a way to detect regression.</p>
+          <p class="naksha-repo-link"><a href="https://github.com/Adityaraj0421/naksha-studio" target="_blank" rel="noreferrer">Explore Naksha Studio on GitHub ↗</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-next"><p>End of selected work</p><a href="mailto:kang.applies@gmail.com">Build the next<br /><em>good thing together.</em></a></section>
+  </main>
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>

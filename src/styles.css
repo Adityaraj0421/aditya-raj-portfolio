@@ -184,11 +184,7 @@ h1 em {
   max-width: 500px;
   margin: 26px 0 0;
   color: #fff;
-  padding: 12px 14px;
-  border-radius: 12px;
-  background: rgba(8, 12, 10, 0.68);
-  backdrop-filter: blur(9px);
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.32);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
   font-size: clamp(15px, 1.2vw, 18px);
   line-height: 1.48;
 }
@@ -241,8 +237,8 @@ h1 em {
 
 .hero__actions .button--quiet {
   color: #fff;
-  background: rgba(8, 12, 10, 0.76);
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.4);
+  background: transparent;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.78);
 }
 
 .hero__meta {

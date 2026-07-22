@@ -3,37 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ContentOS case study by Aditya Raj." />
-  <meta name="theme-color" content="#eeece4" /><meta property="og:type" content="article" /><meta property="og:title" content="ContentOS — Aditya Raj" /><meta property="og:description" content="An internal multi-stage AI pipeline turning raw footage into production-ready ideas." /><meta property="og:image" content="/assets/projects/contentos.webp" /><meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="ContentOS case study by Aditya Raj — an internal AI research and content operations system." />
+  <meta name="theme-color" content="#eeece4" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ContentOS — Aditya Raj" />
+  <meta property="og:description" content="Unifying creator research, strategy, scripting, planning, memory, and tracking in one operational product." />
+  <meta property="og:image" content="/assets/case-studies/contentos/scene-01-research-system.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/src/case-study.css" />
   <title>ContentOS — Aditya Raj</title>
 </head>
 <body>
-  <nav class="case-nav" aria-label="Case study navigation"><a href="/">← All work</a><a class="case-nav__brand" href="/">Aditya Raj</a><a class="case-nav__next" href="/work/naksha-studio/">Next project →</a></nav>
-  <header class="case-hero"><div class="case-hero__eyebrow"><span>ContentOS / 2026</span><span class="draft-note">Draft narrative</span></div><h1>From raw footage<br />to an idea <em>worth filming.</em></h1><div class="case-hero__bottom"><p class="case-hero__intro">An internal production system that turns unstructured creator footage into ranked, ready-to-shoot Hinglish Instagram scripts.</p><dl class="case-meta"><div><dt>Role</dt><dd>Design Engineer</dd></div><div><dt>Status</dt><dd>In production</dd></div><div><dt>Stack</dt><dd>Next.js / Supabase</dd></div><div><dt>AI</dt><dd>Gemini / LLM pipeline</dd></div></dl></div></header>
-  <div class="case-cover case-cover--image"><img src="/assets/projects/contentos.webp" alt="Three textile panels progressing from fragmented to structured compositions" /></div>
-  <section class="case-section"><div class="case-grid"><p class="chapter-label">01 / System</p><div class="case-copy"><h2>Creative work still needs<br /><em>operational structure.</em></h2><p>Content analysis was not a single prompt. It required intake, source scraping, evaluation, ranking, script generation, and human review. I structured the product around these phases so the system could be inspected and improved rather than treated as one opaque AI response.</p><div class="fact-grid"><div class="fact"><strong>Multi-stage</strong><span>Pipeline with LLM calls at each phase</span></div><div class="fact"><strong>$1.50</strong><span>Approximate cost per analysis</span></div><div class="fact"><strong>0→1</strong><span>Architecture, interface, and implementation</span></div></div></div></div></section>
-  <section class="case-section case-section--dark"><div class="case-grid"><p class="chapter-label">02 / Decisions</p><div class="case-copy"><h2>Show the reasoning<br />without showing <em>the machinery.</em></h2><p>The interface needed to help an internal team understand why content was ranked a certain way, find weak stages, and move from analysis to an actionable script without exposing unnecessary technical detail.</p><div class="decision-grid"><article class="decision"><span>Decision 01</span><h3>Phase boundaries</h3><p>Give each stage a clear input, output, and visible status to make failures diagnosable.</p></article><article class="decision"><span>Decision 02</span><h3>Rank before write</h3><p>Separate content judgment from generation so the team could evaluate signals first.</p></article><article class="decision"><span>Decision 03</span><h3>Cost as product data</h3><p>Treat model usage and analysis cost as a first-class operational constraint.</p></article></div></div></div></section>
-  <section class="case-section"><div class="case-grid"><p class="chapter-label">03 / Reflection</p><div class="case-copy"><h2>Design and code became<br /><em>one feedback loop.</em></h2><p>Owning the product and implementation meant interface decisions could respond directly to real pipeline behavior. This draft will later include the production interface, failure states, ranking model, and examples of how generated scripts changed through iteration.</p></div></div></section>
-  <section class="case-section case-section--evidence"><div class="case-grid"><p class="chapter-label">04 / Implementation evidence</p><div class="case-copy"><h2>React and TypeScript,<br /><em>visible in public code.</em></h2><p>ContentOS is private, so this related Fobet frontend implementation is used as public engineering evidence rather than presented as ContentOS source. It shows the same design-engineering approach: typed component contracts, explicit media states, browser failure handling, and performance-aware loading.</p><div class="code-evidence"><div class="code-evidence__bar"><span>ReelPlayer.tsx</span><a href="https://github.com/Adityaraj0421/fobetmedia/blob/main/src/components/ReelPlayer.tsx" target="_blank" rel="noreferrer">View source ↗</a></div><pre><code>interface ReelProps {
-  data: {
-    id: number;
-    username: string;
-    videoSrc: string;
-  };
-  isActive: boolean;
-}
+  <nav class="case-nav" aria-label="Case study navigation">
+    <a href="/">← All work</a>
+    <a class="case-nav__brand" href="/">Aditya Raj</a>
+    <a class="case-nav__next" href="#outcome">View outcome ↓</a>
+  </nav>
 
-useEffect(() =&gt; {
-  if (isActive &amp;&amp; videoRef.current) {
-    videoRef.current.play()
-      .then(() =&gt; setIsPlaying(true))
-      .catch(() =&gt; setIsPlaying(false));
-  } else {
-    videoRef.current?.pause();
-  }
-}, [isActive]);</code></pre></div><div class="engineering-grid"><article><span>Component contract</span><h3>Typed props</h3><p>The media component defines its input and active state in TypeScript rather than accepting unstructured data.</p></article><article><span>Async state</span><h3>Failure-aware playback</h3><p>The interface handles both resolved and rejected browser playback promises instead of assuming autoplay succeeds.</p></article><article><span>Performance</span><h3>Load only what is active</h3><p>Active media uses eager preload; inactive media is paused and configured not to preload.</p></article><article><span>State architecture</span><h3>Local + shared state</h3><p>Ephemeral playback stays local while shared modal, toast, and selection state lives in a typed Zustand store.</p></article></div><p class="evidence-note">Public evidence currently does not include an automated test suite or production API-contract layer, so those are intentionally not claimed here.</p></div></div></section>
-  <section class="case-next"><p>Next case study</p><a href="/work/naksha-studio/">Naksha Studio<br /><em>A team inside the terminal.</em></a></section>
+  <main>
+    <header class="case-hero case-hero--contentos">
+      <div class="case-hero__eyebrow"><span>ContentOS / 2026</span><span>Built at Fobet Media</span></div>
+      <h1>Research is useful.<br />A system that <em>remembers</em> is better.</h1>
+      <div class="case-hero__bottom">
+        <p class="case-hero__intro">I helped shape an internal AI workspace that turns scattered Instagram research into reusable strategy, scripts, publishing plans, and measurable creator intelligence.</p>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Design Engineer</dd></div>
+          <div><dt>Company</dt><dd>Fobet Media</dd></div>
+          <div><dt>Stack</dt><dd>React / TypeScript / Vite</dd></div>
+          <div><dt>Services</dt><dd>Gemini / Apify / Supabase</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="case-cover case-cover--image"><img src="/assets/projects/contentos.webp" alt="Three textile panels progressing from fragmented to structured compositions" /></div>
+
+    <section class="case-section">
+      <div class="case-grid">
+        <p class="chapter-label">01 / The problem</p>
+        <div class="case-copy">
+          <h2>Every search produced an answer.<br />None produced <em>shared memory.</em></h2>
+          <p>Competitor research, location discovery, hook analysis, transcription, and repurposing began as separate jobs. Useful findings lived inside isolated runs, so the team had to repeatedly reconstruct context before moving from research to a content decision.</p>
+          <div class="fact-grid">
+            <div class="fact"><strong>3</strong><span>Core AI research pipelines documented in the product</span></div>
+            <div class="fact"><strong>7</strong><span>Connected workspaces from research through tracking</span></div>
+            <div class="fact"><strong>1</strong><span>Shared operational memory across the workflow</span></div>
+          </div>
+        </div>
+      </div>
+      <figure class="product-shot product-shot--wide">
+        <img loading="lazy" decoding="async" src="/assets/case-studies/contentos/scene-01-research-system.webp" srcset="/assets/case-studies/contentos/scene-01-research-system-768.webp 768w, /assets/case-studies/contentos/scene-01-research-system.webp 1536w" sizes="(max-width: 800px) 100vw, 86vw" width="1536" height="1024" alt="ContentOS unified research workspace set within six connected research archives" />
+        <figcaption><span>ContentOS / Figure 01</span> One conversational entry point for six recurring research jobs</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section case-section--contentos-warm">
+      <div class="case-grid">
+        <p class="chapter-label">02 / From research to direction</p>
+        <div class="case-copy">
+          <h2>Collect less.<br /><em>Structure more.</em></h2>
+          <p>The strategy workspace asks for the inputs that actually change a recommendation—offer, audience, language, competitors, and aspirational accounts. ContentOS then combines those inputs with research signals to create a reusable strategy instead of another disposable chat response.</p>
+          <div class="decision-grid">
+            <article class="decision"><span>Decision 01</span><h3>One research language</h3><p>Competitor, city, hook, reel, repurposing, and transcription tasks share one conversational surface.</p></article>
+            <article class="decision"><span>Decision 02</span><h3>Explicit inputs</h3><p>Strategy generation begins with a structured brief so important business context is inspectable.</p></article>
+            <article class="decision"><span>Decision 03</span><h3>Reusable output</h3><p>Research becomes client strategy, content pillars, hook banks, and future production context.</p></article>
+          </div>
+        </div>
+      </div>
+      <figure class="product-shot product-shot--wide">
+        <img loading="lazy" decoding="async" src="/assets/case-studies/contentos/scene-02-strategy-workspace.webp" srcset="/assets/case-studies/contentos/scene-02-strategy-workspace-768.webp 768w, /assets/case-studies/contentos/scene-02-strategy-workspace.webp 1536w" sizes="(max-width: 800px) 100vw, 86vw" width="1536" height="1024" alt="ContentOS strategy workspace surrounded by competitor, audience, content pillar, and hook archives" />
+        <figcaption><span>ContentOS / Figure 02</span> Strategy onboarding — grounding AI output in an explicit product brief</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section">
+      <div class="case-grid">
+        <p class="chapter-label">03 / Production loop</p>
+        <div class="case-copy">
+          <h2>A good reference should become a starting point—not <em>a copy.</em></h2>
+          <p>Script Studio accepts a Reel or YouTube Short, extracts its useful structure, and produces three scripts for a new idea in the selected creator voice. The calendar then gives those outputs an operational destination with account-level status and publishing context.</p>
+        </div>
+      </div>
+      <div class="contentos-pair">
+        <figure class="product-shot"><img loading="lazy" decoding="async" src="/assets/case-studies/contentos/scene-03-script-studio.webp" srcset="/assets/case-studies/contentos/scene-03-script-studio-768.webp 768w, /assets/case-studies/contentos/scene-03-script-studio.webp 1536w" sizes="(max-width: 800px) 100vw, 44vw" width="1536" height="1024" alt="ContentOS Script Studio translating one reference reel into three script directions" /><figcaption><span>ContentOS / Figure 03</span> Reference → transcription → three original scripts</figcaption></figure>
+        <figure class="product-shot"><img loading="lazy" decoding="async" src="/assets/case-studies/contentos/product-04-content-calendar.webp" srcset="/assets/case-studies/contentos/product-04-content-calendar-768.webp 768w, /assets/case-studies/contentos/product-04-content-calendar.webp 1536w" sizes="(max-width: 800px) 100vw, 44vw" width="2940" height="1687" alt="The shipped ContentOS calendar interface showing account filters, content statuses, and a monthly schedule" /><figcaption><span>ContentOS / Figure 04</span> Real product view — account-level publishing states</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="case-section case-section--ink">
+      <div class="case-grid">
+        <p class="chapter-label">04 / Product memory</p>
+        <div class="case-copy">
+          <h2>The compounding advantage was not generation.<br />It was <em>remembering.</em></h2>
+          <p>Creator Memory and Reel Gallery turn research runs into a durable library. The team can search, rank, save, dismiss, inspect prior appearances, and send a useful reel directly into the remix workflow instead of starting from zero.</p>
+          <div class="fact-grid fact-grid--dark">
+            <div class="fact"><strong>200</strong><span>Creators visible in the captured product memory</span></div>
+            <div class="fact"><strong>200</strong><span>Reels available across captured research runs</span></div>
+            <div class="fact"><strong>1 loop</strong><span>Research findings feed future scripting and strategy</span></div>
+          </div>
+        </div>
+      </div>
+      <figure class="product-shot product-shot--dark product-shot--wide">
+        <img loading="lazy" decoding="async" src="/assets/case-studies/contentos/scene-05-creator-memory.webp" srcset="/assets/case-studies/contentos/scene-05-creator-memory-768.webp 768w, /assets/case-studies/contentos/scene-05-creator-memory.webp 1536w" sizes="(max-width: 800px) 100vw, 86vw" width="1536" height="1024" alt="ContentOS creator memory represented as a persistent archive of profiles" />
+        <figcaption><span>ContentOS / Figure 05</span> Creator Memory — persistent, searchable research context</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-section case-section--evidence">
+      <div class="case-grid">
+        <p class="chapter-label">05 / Design engineering</p>
+        <div class="case-copy">
+          <h2>The interface sits on top of a real<br /><em>operational architecture.</em></h2>
+          <p>The public repository documents a strict TypeScript React application with authenticated team access, persisted Supabase data, Zustand state, Gemini-powered analysis, and Apify collection jobs. The system is divided by product responsibility rather than presented as one opaque AI call.</p>
+          <div class="contentos-architecture" aria-label="ContentOS system architecture">
+            <article><span>Input</span><strong>Team intent</strong><small>Prompt, URL, handle, location, or structured client brief</small></article>
+            <i aria-hidden="true">→</i>
+            <article><span>Collection</span><strong>Apify jobs</strong><small>Creator, reel, location, and competitor source material</small></article>
+            <i aria-hidden="true">→</i>
+            <article><span>Intelligence</span><strong>Gemini pipelines</strong><small>Analysis, transcription, ranking, strategy, and rewriting</small></article>
+            <i aria-hidden="true">→</i>
+            <article><span>Memory</span><strong>Supabase</strong><small>Research history, creators, reels, strategies, scripts, and plans</small></article>
+          </div>
+          <div class="engineering-grid">
+            <article><span>Application contract</span><h3>Strict TypeScript</h3><p>Typed React surfaces make research results, saved entities, and workspace state explicit across the application.</p></article>
+            <article><span>Authentication</span><h3>Role-aware access</h3><p>Clerk protects the internal workspace while finance and administrative capabilities remain permission-aware.</p></article>
+            <article><span>Persistent state</span><h3>Supabase + Zustand</h3><p>Durable product data lives in Supabase while Zustand coordinates responsive client-side workflow state.</p></article>
+            <article><span>Verification</span><h3>608+ unit tests</h3><p>The repository documents more than six hundred unit tests around a product that depends on multiple asynchronous services.</p></article>
+          </div>
+          <p class="naksha-repo-link contentos-live-link"><a href="https://contentos2-omega.vercel.app/" target="_blank" rel="noreferrer">View deployed product ↗</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="outcome">
+      <div class="case-grid">
+        <p class="chapter-label">06 / Outcome</p>
+        <div class="case-copy">
+          <h2>Not seven disconnected tools.<br />One <em>content operating loop.</em></h2>
+          <p>The shipped product connects discovery, judgment, creation, planning, memory, and measurement. A useful creator can move from research into memory; a strong reel can move into Script Studio; a script can move into the calendar; and tracked accounts inform the next round of research.</p>
+          <div class="fact-grid">
+            <div class="fact"><strong>Research</strong><span>Discover competitors, locations, creators, reels, and hooks</span></div>
+            <div class="fact"><strong>Produce</strong><span>Build strategy, remix references, and plan publication</span></div>
+            <div class="fact"><strong>Learn</strong><span>Remember useful sources and monitor performance over time</span></div>
+          </div>
+        </div>
+      </div>
+      <figure class="product-shot product-shot--wide">
+        <img loading="lazy" decoding="async" src="/assets/case-studies/contentos/scene-07-tracking-dashboard.webp" srcset="/assets/case-studies/contentos/scene-07-tracking-dashboard-768.webp 768w, /assets/case-studies/contentos/scene-07-tracking-dashboard.webp 1536w" sizes="(max-width: 800px) 100vw, 86vw" width="1536" height="1024" alt="ContentOS dashboard monitoring follower growth, engagement, and posting cadence" />
+        <figcaption><span>ContentOS / Figure 06</span> Tracking closes the loop between content decisions and observed performance</figcaption>
+      </figure>
+      <div class="case-grid case-grid--followup">
+        <p class="chapter-label">Reflection</p>
+        <div class="case-copy"><p class="case-reflection"><strong>What I would improve next:</strong> make source freshness visible across every generated recommendation, add clearer recovery paths for failed third-party embeds and scraping jobs, and connect published calendar items directly to their later performance record.</p></div>
+      </div>
+    </section>
+
+    <section class="case-next"><p>Next case study</p><a href="/work/naksha-studio/">Naksha Studio<br /><em>A team inside the terminal.</em></a></section>
+  </main>
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
