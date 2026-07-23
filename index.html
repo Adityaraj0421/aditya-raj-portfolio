@@ -211,6 +211,77 @@
       </div>
     </section>
 
+    <section class="lab section" id="experiments" aria-labelledby="lab-title">
+      <header class="lab__header reveal">
+        <div>
+          <p class="section-kicker">Open source &amp; experiments <span>Built to learn in public</span></p>
+          <h2 id="lab-title">Small bets.<br /><em>Real software.</em></h2>
+        </div>
+        <p class="lab__intro">Tools and prototypes I build to investigate a technical question—model routing, tool behavior, cross-device input, or new forms of browser interaction.</p>
+      </header>
+
+      <div class="lab-grid">
+        <article class="lab-card lab-card--gearbox reveal">
+          <a class="lab-card__visual" href="https://github.com/Adityaraj0421/gearbox" target="_blank" rel="noopener noreferrer" aria-label="View Gearbox on GitHub">
+            <img class="lab-card__image" src="/assets/experiments/gearbox.webp" srcset="/assets/experiments/gearbox-800.webp 800w, /assets/experiments/gearbox.webp 1586w" sizes="(max-width: 820px) 100vw, 65vw" width="1586" height="992" loading="lazy" decoding="async" alt="Three progressively larger dark stone gateways connected by an automated routing track in a rocky landscape" />
+            <span class="lab-card__open" aria-hidden="true">↗</span>
+          </a>
+          <div class="lab-card__copy">
+            <div class="lab-card__meta"><span>01 / AI infrastructure</span><span>Claude Code plugin</span></div>
+            <h3>Gearbox</h3>
+            <p>Routes delegated work to the least expensive capable model, escalates when an agent gets stuck, and verifies the result before accepting it.</p>
+            <ul aria-label="Gearbox technologies"><li>Model routing</li><li>Verifier gates</li><li>JSONL telemetry</li></ul>
+            <a class="lab-card__link" href="https://github.com/Adityaraj0421/gearbox" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="lab-card lab-card--toolbench reveal">
+          <a class="lab-card__visual" href="https://github.com/Adityaraj0421/toolbench/blob/main/docs/FINDINGS.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Toolbench findings on GitHub">
+            <img class="lab-card__image" src="/assets/experiments/toolbench.webp" srcset="/assets/experiments/toolbench-800.webp 800w, /assets/experiments/toolbench.webp 1586w" sizes="(max-width: 820px) 100vw, 50vw" width="1586" height="992" loading="lazy" decoding="async" alt="A calibrated field of repeated testing instruments with one result path diverging in red" />
+            <span class="lab-card__open" aria-hidden="true">↗</span>
+          </a>
+          <div class="lab-card__copy">
+            <div class="lab-card__meta"><span>02 / LLM evaluation</span><span>Research harness</span></div>
+            <h3>Toolbench</h3>
+            <p>A dependency-light harness for measuring how tool descriptions change whether—and when—models actually call a tool.</p>
+            <ul aria-label="Toolbench technologies"><li>Python</li><li>27 offline tests</li><li>Multi-model traces</li></ul>
+            <a class="lab-card__link" href="https://github.com/Adityaraj0421/toolbench/blob/main/docs/FINDINGS.md" target="_blank" rel="noopener noreferrer">Read the findings <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="lab-card lab-card--tera reveal">
+          <a class="lab-card__visual" href="https://github.com/Adityaraj0421/terabhaiseedhecontrol101" target="_blank" rel="noopener noreferrer" aria-label="View Tera Bhai Seedhe Control on GitHub">
+            <img class="lab-card__image" src="/assets/experiments/tera-control.webp" srcset="/assets/experiments/tera-control-800.webp 800w, /assets/experiments/tera-control.webp 1586w" sizes="(max-width: 820px) 100vw, 50vw" width="1586" height="992" loading="lazy" decoding="async" alt="A black control slab sending a blue signal through a bridge toward a distant gateway" />
+            <span class="lab-card__open" aria-hidden="true">↗</span>
+          </a>
+          <div class="lab-card__copy">
+            <div class="lab-card__meta"><span>03 / Cross-device prototype</span><span>iOS + browser</span></div>
+            <h3>Tera Bhai Seedhe Control</h3>
+            <p>Turns an iPhone into an Xbox Cloud Gaming controller through a native sender, a low-latency bridge, and a browser extension.</p>
+            <ul aria-label="Tera Bhai Seedhe Control technologies"><li>Swift</li><li>UDP → WebSocket</li><li>Gamepad API</li></ul>
+            <a class="lab-card__link" href="https://github.com/Adityaraj0421/terabhaiseedhecontrol101" target="_blank" rel="noopener noreferrer">Inspect the build <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="lab-card lab-card--redbull reveal">
+          <a class="lab-card__visual" href="https://redbull-f1.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open the RedBull F1 live experiment">
+            <img class="lab-card__image" src="/assets/experiments/redbull-f1.webp" srcset="/assets/experiments/redbull-f1-800.webp 800w, /assets/experiments/redbull-f1.webp 1586w" sizes="(max-width: 820px) 100vw, 65vw" width="1586" height="992" loading="lazy" decoding="async" alt="An abstract red racing form framed by a perspective installation at dusk" />
+            <span class="lab-card__open" aria-hidden="true">↗</span>
+          </a>
+          <div class="lab-card__copy">
+            <div class="lab-card__meta"><span>04 / Creative engineering</span><span>Live WebGL experiment</span></div>
+            <h3>RedBull F1</h3>
+            <p>A head-tracked 3D experience that turns the browser into a physical window around an F1 car, with camera-free input fallbacks.</p>
+            <ul aria-label="RedBull F1 technologies"><li>React Three Fiber</li><li>MediaPipe</li><li>Off-axis projection</li></ul>
+            <div class="lab-card__actions">
+              <a class="lab-card__link" href="https://redbull-f1.vercel.app" target="_blank" rel="noopener noreferrer">Open live demo <span aria-hidden="true">↗</span></a>
+              <a class="lab-card__link lab-card__link--quiet" href="https://github.com/Adityaraj0421/RedbullF1" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="practice section" id="practice" aria-labelledby="practice-title">
       <header class="practice__header reveal">
         <p class="section-kicker">How I work</p>

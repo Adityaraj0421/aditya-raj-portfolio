@@ -907,6 +907,578 @@ h1 em {
   margin-bottom: 28px;
 }
 
+.lab {
+  color: #f2ecee;
+  background: #241a21;
+}
+
+.lab__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .55fr);
+  gap: 9vw;
+  align-items: end;
+  margin-bottom: clamp(64px, 8vw, 116px);
+}
+
+.lab .section-kicker {
+  color: #a58f9a;
+}
+
+.lab__header h2 {
+  margin: 0;
+  font-size: clamp(52px, 7vw, 106px);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: .86;
+}
+
+.lab__header h2 em {
+  color: #e0cbd4;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+
+.lab__intro {
+  max-width: 430px;
+  margin: 0 0 5px;
+  color: #b4a3ab;
+  font-size: 16px;
+  line-height: 1.58;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: clamp(22px, 3vw, 42px);
+  background: rgba(255,255,255,.11);
+}
+
+.lab-card {
+  min-width: 0;
+  background: #2b2027;
+}
+
+.lab-card__visual {
+  position: relative;
+  display: block;
+  min-height: clamp(360px, 36vw, 570px);
+  overflow: hidden;
+  color: inherit;
+}
+
+.lab-card__image {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(.2,.75,.25,1), filter 300ms ease;
+}
+
+.lab-card__visual:hover .lab-card__image {
+  filter: saturate(1.04) contrast(1.02);
+  transform: scale(1.018);
+}
+
+.lab-card__open {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  place-items: center;
+  font-size: 16px;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.lab-card__visual:hover .lab-card__open {
+  color: #121714;
+  background: #edf0e8;
+  transform: rotate(8deg);
+}
+
+.lab-card__copy {
+  min-height: 365px;
+  padding: clamp(26px, 3.4vw, 48px);
+  border-top: 1px solid rgba(255,255,255,.11);
+}
+
+.lab-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(50px, 6vw, 88px);
+  color: #9a838f;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.lab-card__meta span:last-child {
+  text-align: right;
+}
+
+.lab-card h3 {
+  margin: 0 0 20px;
+  font-size: clamp(38px, 4.4vw, 68px);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: .92;
+}
+
+.lab-card__copy > p {
+  max-width: 540px;
+  min-height: 74px;
+  margin: 0;
+  color: #baaab1;
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.lab-card__copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 28px 0 36px;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-card__copy li {
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 999px;
+  color: #a9939e;
+  font-size: 10px;
+}
+
+.lab-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lab-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.lab-card__link--quiet {
+  color: #7f8b84;
+}
+
+/* Gearbox: a routing policy rendered as a machine, not a logo tile. */
+.lab-card--gearbox .lab-card__visual {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(133, 99, 214, .3), transparent 36%),
+    linear-gradient(145deg, #18172a, #10151c 70%);
+}
+
+.routing-diagram {
+  display: grid;
+  grid-template-columns: 72px 36px repeat(3, minmax(76px, 112px));
+  gap: 10px;
+  align-items: center;
+  width: min(86%, 590px);
+}
+
+.routing-diagram__input,
+.routing-diagram > div,
+.routing-diagram__verify {
+  border: 1px solid rgba(216, 205, 255, .24);
+  background: rgba(13, 15, 24, .62);
+  box-shadow: 0 18px 42px rgba(0,0,0,.24);
+}
+
+.routing-diagram__input {
+  padding: 13px 10px;
+  border-radius: 999px;
+  color: #d7caff;
+  font-size: 10px;
+  text-align: center;
+}
+
+.routing-diagram > i {
+  height: 1px;
+  background: linear-gradient(90deg, #9174e0, rgba(145,116,224,.15));
+}
+
+.routing-diagram > div {
+  display: flex;
+  min-height: 154px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.routing-diagram > div:nth-of-type(2) { transform: translateY(-22px); }
+.routing-diagram > div:nth-of-type(3) { transform: translateY(18px); }
+
+.routing-diagram div span,
+.routing-diagram div small {
+  color: #80749c;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.routing-diagram div b {
+  color: #ebe5ff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.routing-diagram__verify {
+  grid-column: 3 / 6;
+  justify-self: center;
+  margin-top: 20px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: #a9e2bd;
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Toolbench: the published finding is the visual identity. */
+.lab-card--toolbench .lab-card__visual {
+  display: grid;
+  place-items: center;
+  color: #17201c;
+  background: #d7e5d8;
+}
+
+.lab-card--toolbench .lab-card__open {
+  border-color: rgba(20,30,25,.22);
+}
+
+.bench-chart {
+  width: min(82%, 530px);
+}
+
+.bench-chart__legend {
+  display: flex;
+  gap: 17px;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+  color: #53635a;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.bench-chart__legend span::before {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #17201c;
+  content: "";
+}
+
+.bench-chart__legend span:last-child::before { background: #e85e3f; }
+
+.bench-chart__plot {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 230px;
+  gap: 20px;
+  align-items: end;
+  padding: 24px 16px 0;
+  border-bottom: 1px solid rgba(23,32,28,.35);
+  background-image: linear-gradient(rgba(23,32,28,.09) 1px, transparent 1px);
+  background-size: 100% 25%;
+}
+
+.bench-chart__plot > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  gap: 4px;
+  align-items: end;
+}
+
+.bench-chart__plot b,
+.bench-chart__plot i {
+  height: var(--h);
+  min-height: 3px;
+  background: #17201c;
+}
+
+.bench-chart__plot i { background: #e85e3f; }
+
+.bench-chart__plot small {
+  grid-column: 1 / -1;
+  margin: 8px -5px -19px;
+  color: #58665f;
+  font-size: 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bench-chart > p {
+  margin: 45px 0 0;
+  color: #53635a;
+  font-size: 11px;
+  text-align: right;
+}
+
+.bench-chart > p strong {
+  margin-right: 5px;
+  color: #e24f32;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -.05em;
+}
+
+/* Tera: one continuous signal crossing three runtimes. */
+.lab-card--tera .lab-card__visual {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 25% 45%, rgba(81, 170, 255, .18), transparent 26%),
+    linear-gradient(145deg, #101923, #101412);
+}
+
+.controller-flow {
+  display: flex;
+  width: min(86%, 610px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(9px, 1.5vw, 22px);
+}
+
+.controller-flow__phone {
+  position: relative;
+  display: grid;
+  width: 92px;
+  height: 178px;
+  flex: 0 0 auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-content: center;
+  padding: 12px;
+  border: 1px solid #526477;
+  border-radius: 18px;
+  background: #111820;
+}
+
+.controller-flow__phone::before {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 28px;
+  height: 4px;
+  border-radius: 999px;
+  background: #384654;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.controller-flow__phone i,
+.controller-flow__phone span {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #4ea3ea;
+  border-radius: 50%;
+}
+
+.controller-flow__phone i { grid-column: 1 / -1; justify-self: center; }
+.controller-flow__phone b { position: absolute; bottom: -24px; width: 100%; color: #637486; font-size: 8px; font-weight: 500; text-align: center; text-transform: uppercase; }
+
+.controller-flow__signal {
+  position: relative;
+  display: flex;
+  width: clamp(42px, 6vw, 90px);
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.controller-flow__signal i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4ea3ea;
+  box-shadow: 0 0 14px #4ea3ea;
+}
+
+.controller-flow__signal small {
+  position: absolute;
+  top: 18px;
+  color: #637486;
+  font-size: 8px;
+}
+
+.controller-flow__bridge {
+  display: flex;
+  min-width: 112px;
+  min-height: 122px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #445449;
+  border-radius: 9px;
+  background: #16201b;
+}
+
+.controller-flow__bridge span,
+.controller-flow__bridge small,
+.controller-flow__screen span {
+  color: #68786e;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.controller-flow__bridge b,
+.controller-flow__screen b {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.controller-flow__screen {
+  display: flex;
+  width: 155px;
+  height: 102px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  border: 3px solid #363d38;
+  border-radius: 4px;
+  background: radial-gradient(circle at 75% 40%, #344837, #121814 60%);
+}
+
+/* RedBull F1: a browser viewport that visibly responds to a tracked eye. */
+.lab-card--redbull .lab-card__visual {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(225, 35, 31, .22), transparent 38%),
+    linear-gradient(165deg, #1c2025, #080a0c 72%);
+}
+
+.f1-window {
+  position: relative;
+  width: min(78%, 520px);
+  aspect-ratio: 1.48;
+  overflow: hidden;
+  border: 1px solid #4a4e54;
+  border-radius: 9px;
+  background: linear-gradient(180deg, #20252b, #08090b 62%);
+  box-shadow: 24px 28px 0 rgba(224, 34, 29, .11);
+  transform: perspective(800px) rotateY(-5deg) rotateX(2deg);
+}
+
+.f1-window__grid {
+  position: absolute;
+  inset: 52% -25% -55%;
+  background-image:
+    linear-gradient(rgba(225,45,38,.32) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225,45,38,.28) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transform: perspective(230px) rotateX(55deg);
+}
+
+.f1-window__eye {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  color: #ec3b31;
+  font-size: 10px;
+  text-shadow: 0 0 12px #e2251f;
+}
+
+.f1-window__car {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 22%;
+  border-radius: 62% 30% 24% 38%;
+  background: linear-gradient(90deg, #222831 0 20%, #d42422 21% 70%, #323942 72%);
+  box-shadow: 0 18px 30px rgba(0,0,0,.7);
+  transform: translate(-50%, -50%) skewX(-12deg);
+}
+
+.f1-window__car::before,
+.f1-window__car::after {
+  position: absolute;
+  bottom: -17px;
+  width: 29px;
+  height: 29px;
+  border: 5px solid #111;
+  border-radius: 50%;
+  background: #3f4346;
+  content: "";
+}
+
+.f1-window__car::before { left: 17%; }
+.f1-window__car::after { right: 12%; }
+.f1-window__car i { position: absolute; top: -17px; left: 49%; width: 44px; height: 20px; border-radius: 80% 50% 0 0; background: #28303a; }
+.f1-window__car b { position: absolute; top: 20%; right: 8%; width: 35%; height: 3px; background: #f1c93b; }
+
+.f1-window > p {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  margin: 0;
+  color: #737980;
+  font-family: ui-monospace, monospace;
+  font-size: 8px;
+}
+
+.f1-window > p strong { color: #d9dde2; font-weight: 400; }
+
+/* The larger cards create hierarchy; the middle pair stays compact and comparative. */
+.lab-card--gearbox,
+.lab-card--redbull {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.34fr) minmax(320px, .66fr);
+}
+
+.lab-card--gearbox .lab-card__visual,
+.lab-card--redbull .lab-card__visual {
+  display: block;
+  min-height: clamp(500px, 47vw, 720px);
+}
+
+.lab-card--gearbox .lab-card__copy {
+  border-top: 0;
+  border-left: 1px solid rgba(255,255,255,.11);
+}
+
+.lab-card--redbull {
+  grid-template-columns: minmax(320px, .66fr) minmax(0, 1.34fr);
+}
+
+.lab-card--redbull .lab-card__visual {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.lab-card--redbull .lab-card__copy {
+  grid-column: 1;
+  grid-row: 1;
+  border-top: 0;
+  border-right: 1px solid rgba(255,255,255,.11);
+}
+
 .practice {
   color: #f4f2eb;
   background: #121c17;
@@ -1397,6 +1969,41 @@ a:focus-visible {
     min-height: 520px;
   }
 
+  .lab__header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-card--gearbox,
+  .lab-card--redbull {
+    display: block;
+  }
+
+  .lab-card--gearbox .lab-card__copy,
+  .lab-card--redbull .lab-card__copy {
+    border-right: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.11);
+  }
+
+  .lab-card--redbull .lab-card__visual,
+  .lab-card--redbull .lab-card__copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .lab-card__visual {
+    min-height: 500px;
+  }
+
+  .lab-card__copy > p {
+    min-height: 0;
+  }
+
   .practice__header .section-kicker {
     margin-bottom: 40px;
   }
@@ -1581,6 +2188,81 @@ a:focus-visible {
 
   .project-mini__copy {
     padding: 38px 24px 48px;
+  }
+
+  .lab__header h2 {
+    font-size: clamp(50px, 15vw, 72px);
+  }
+
+  .lab__intro {
+    font-size: 14px;
+  }
+
+  .lab-card__visual {
+    min-height: 370px;
+  }
+
+  .lab-card__copy {
+    min-height: 0;
+    padding: 28px 22px 38px;
+  }
+
+  .lab-card__meta {
+    margin-bottom: 45px;
+  }
+
+  .lab-card h3 {
+    font-size: 42px;
+  }
+
+  .routing-diagram {
+    grid-template-columns: 52px 16px repeat(3, minmax(58px, 1fr));
+    width: 92%;
+    gap: 5px;
+  }
+
+  .routing-diagram > div {
+    min-height: 126px;
+    padding: 10px 8px;
+  }
+
+  .routing-diagram div b { font-size: 10px; }
+
+  .routing-diagram__verify { margin-top: 12px; }
+
+  .bench-chart {
+    width: 86%;
+  }
+
+  .bench-chart__plot {
+    height: 190px;
+    gap: 9px;
+  }
+
+  .controller-flow {
+    width: 92%;
+    gap: 7px;
+  }
+
+  .controller-flow__phone {
+    width: 70px;
+    height: 138px;
+    gap: 10px;
+    padding: 9px;
+  }
+
+  .controller-flow__phone i,
+  .controller-flow__phone span {
+    width: 19px;
+    height: 19px;
+  }
+
+  .controller-flow__signal { width: 30px; gap: 3px; }
+  .controller-flow__bridge { min-width: 84px; min-height: 104px; padding: 11px; }
+  .controller-flow__screen { width: 106px; height: 84px; padding: 10px; }
+
+  .f1-window {
+    width: 84%;
   }
 
   .timeline-item {
